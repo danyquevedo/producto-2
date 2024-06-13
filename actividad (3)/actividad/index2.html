@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boton animado para Redes Sociales</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: content-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #f1f1f1;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw; /* Ajustar el ancho de la imagen al ancho de la ventana */
+      height: 100vh; /* Ajustar la altura de la imagen a la altura de la ventana */
+      overflow: hidden; /* Ocultar cualquier parte de la imagen que se desborde */
+    }
+
+    .container img {
+      min-width: 100%; /* Asegurar que la imagen ocupe al menos el ancho de la ventana */
+      min-height: 100%; /* Asegurar que la imagen ocupe al menos la altura de la ventana */
+      object-fit: cover; /* Escalar la imagen para que ocupe toda la ventana sin distorsionarla */
+      display: block;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      font-size: 20px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background: #314652;
+      color: #f1f1f1;
+      border-radius: 50%;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+      transition: all .4s ease-in-out;
+    }
+
+    .buttons a:hover {
+      transform: scale(1.2);
+    }
+
+    .user-name {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    /* Agregar estilos de respuesta para dispositivos móviles */
+    @media only screen and (max-width: 600px) {
+      .buttons a {
+        font-size: 16px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+      }
+
+      .user-name {
+        font-size: 14px;
+        padding: 3px 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- JavaScript to retrieve and display the name -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const firstName = localStorage.getItem('firstName');
+    if (firstName) {
+      const userName = document.createElement('div');
+      userName.textContent = firstName;
+      userName.classList.add('user-name');
+      document.body.appendChild(userName);
+    }
+  });
+</script>
+
+<div class="container">
+  <img src="lab.jpeg" alt="Slide 1"> <!-- Ensure to use your own image -->
+  <section class="buttons">
+    <a href="index.html" class="fa fa-file" title="Inventario"></a>
+    <a href="sing-in.html" class="fa fa-check" title="Registros"></a>
+    <a href="index4.html" class="fa fa-check" title="consultas"></a>
+    <a href="#" class="fa fa-check" title="Pacientes"></a>
+    <a href="#" class="fa fa-check" title="Proxima cita"></a>
+  </section>
+</div>
+
+</body>
+</html>

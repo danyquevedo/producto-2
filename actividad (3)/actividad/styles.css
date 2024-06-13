@@ -1,0 +1,86 @@
+/* Estilos base */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: url('registrop.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.wrapper {
+  background-color: rgba(255, 255, 255, 0); /* Fondo transparente */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 10px;
+  padding-left: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo ligeramente transparente */
+  color: #333; /* Color del texto */
+}
+
+.input-field input::placeholder {
+  color: #888; /* Color del texto del marcador de posición */
+}
+
+.input-field i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+button.login {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button.login:hover {
+  background-color: #0056b3;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.sign-up {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.sign-up:hover {
+  text-decoration: underline;
+}
+
+/* Estilos responsivos */
+@media only screen and (max-width: 600px) {
+  .wrapper {
+      width: 80%; /* Ancho ajustado para dispositivos móviles */
+  }
+}
